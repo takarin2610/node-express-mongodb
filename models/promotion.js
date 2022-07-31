@@ -1,4 +1,3 @@
-const { mongo } = require('mongoose');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -17,7 +16,7 @@ const promotionSchema = new Schema({
     },
     featured: {
         type: Boolean,
-        default: false
+        required: false
     },
     cost: {
         type: Currency,
@@ -32,5 +31,4 @@ const promotionSchema = new Schema({
     timestamps: true
 });
 
-const Promotion = mongoose.model('Promotion', promotionSchema);
-module.exports = Promotion;
+module.exports = mongoose.model('Promotion', promotionSchema);

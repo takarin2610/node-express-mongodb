@@ -1,7 +1,7 @@
 const express = require('express');
-const { response } = require('../app');
-const Promotion = require('../models/promotion');
+const promotion = require('../models/promotion');
 const promotionRouter = express.Router();
+const Promotion = require('../models/promotion');
 
 promotionRouter.route('/')
 .get((req, res, next) => {
@@ -31,7 +31,7 @@ promotionRouter.route('/')
 })
 
 .delete((req, res, next) => {
-    Promotion.deleteMany()
+   Promotion.deleteMany()
     .then(response => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');

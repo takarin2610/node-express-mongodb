@@ -1,4 +1,3 @@
-const { mongo } = require('mongoose');
 const  mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -14,7 +13,7 @@ const partnerSchema = new Schema({
     },
     featured: {
         type: Boolean,
-        default: false
+        required: false
     },
     description: {
         type: String,
@@ -24,6 +23,4 @@ const partnerSchema = new Schema({
     timestamps: true
 });
 
-const Partner = mongoose.model('Partner', partnerSchema);
-
-module.exports = Partner;
+module.exports = mongoose.model('Partner', partnerSchema);

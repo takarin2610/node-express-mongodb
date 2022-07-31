@@ -1,7 +1,7 @@
 const express = require('express');
-const { response } = require('../app');
-const Partner = require('../models/partner');
 const partnerRouter = express.Router();
+const Partner = require('../models/partner');
+
 
 partnerRouter.route('/')
 .get((req, res, next) => {
